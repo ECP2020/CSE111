@@ -20,6 +20,17 @@ CREATE TABLE Global_TS (
 	TS_Year date  null, 
 	TS_genre char(25) null,
 );
+CREATE TABLE USA_TS (
+	TS_title char(25) not null,
+	TS_artist char(25) not null,
+	TS_album char(25) not null,
+	TS_playlist char(25) null,
+	TS_type char(25) null,
+	TS_ISRC varchar(25) null,
+	TS_rank_number DECIMAL(3,0) null,
+	TS_Year date  null, 
+	TS_genre char(25) null,
+);
 CREATE TABLE Billboards (
 	B_rank DECIMAL(3, 0) not null, 
 	B_songs char(25) not null, 
@@ -40,4 +51,8 @@ CREATE TABLE NewestSongs(
 
 .mode "csv"
 .seperator ","
-.import data/Top_50_Global.csv Global_TS
+.import Top_50_Global.csv Global_TS
+
+.mode "csv"
+.seperator ","
+.import Top_50_songs.csv USA_TS
