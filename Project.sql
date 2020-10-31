@@ -9,7 +9,7 @@ CREATE TABLE Person (
 	P_email char(25) not null,
 	P_songs char(25) not null, 
 );
-CREATE TABLE TopSongs (
+CREATE TABLE Global_TS (
 	TS_title char(25) not null,
 	TS_artist char(25) not null,
 	TS_album char(25) not null,
@@ -37,3 +37,7 @@ CREATE TABLE NewestSongs(
 	NS_currentyear date not null,
 	NS_songs char(25) not null, 
 );
+
+.mode "csv"
+.seperator ","
+.import data/Top_50_Global.csv Global_TS
