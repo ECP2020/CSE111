@@ -11,10 +11,14 @@ CREATE TABLE Person (
 );
 CREATE TABLE TopSongs (
 	TS_title char(25) not null,
-	TS_artist char(25) not null, 
-	TS_rank_number DECIMAL(3,0) not null,
-	TS_Year date not null, 
-	TS_genre char(25) not null,
+	TS_artist char(25) not null,
+	TS_album char(25) not null,
+	TS_playlist char(25) null,
+	TS_type char(25) null,
+	TS_ISRC varchar(25) null,
+	TS_rank_number DECIMAL(3,0) null,
+	TS_Year date  null, 
+	TS_genre char(25) null,
 );
 CREATE TABLE Billboards (
 	B_rank DECIMAL(3, 0) not null, 
