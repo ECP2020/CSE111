@@ -31,6 +31,41 @@ CREATE TABLE USA_TS (
 	TS_Year date  null, 
 	TS_genre char(25) null,
 );
+CREATE TABLE Nineteen_TS (
+	nine_ts_title char(25) not null,
+	nine_ts_artist char(25) not null,
+	nine_ts_rank_number DECIMAL(3,0) null,
+	nine_ts_year date null,
+	nine_ts_genre char(25) null,
+);
+CREATE TABLE Eightteen_TS (
+	eight_ts_title char(25) not null,
+	eight_ts_artist char(25) not null,
+	eight_ts_rank_number DECIMAL(3,0) null,
+	eight_ts_year date null,
+	eight_ts_genre char(25) null,
+);
+CREATE TABLE Seventeen_TS (
+	seven_ts_title char(25) not null,
+	seven_ts_artist char(25) not null,
+	seven_ts_rank_number DECIMAL(3,0) null,
+	seven_ts_year date null,
+	seven_ts_genres char(25) null,
+);
+CREATE TABLE Sixteen_TS (
+	six_ts_title char(25) not null,
+	six_ts_artist char(25) not null,
+	six_ts_rank_number DECIMAL(3,0) null,
+	six_ts_year date null,
+	six_ts_genre char(25) null,
+);
+CREATE TABLE Fifteen_TS (
+	five_ts_title char(25) not null,
+	five_ts_artist char(25) not null,
+	five_ts_rank_number DECIMAL(3,0) null,
+	five_ts_year date null,
+	five_ts_genre char(25) null,
+);
 CREATE TABLE Billboards (
 	B_rank DECIMAL(3, 0) not null, 
 	B_songs char(25) not null, 
@@ -56,3 +91,30 @@ CREATE TABLE NewestSongs(
 .mode "csv"
 .seperator ","
 .import Top_50_songs.csv USA_TS
+
+.mode "csv"
+.seperator ","
+.import Top_2019_songs.csv Nineteen_TS
+
+.mode "csv"
+.seperator ","
+.import Top_2018_songs.csv Eightteen_TS
+
+.mode "csv"
+.seperator ","
+.import Top_2017_songs.csv Seventeen_TS
+
+.mode "csv"
+.seperator ","
+.import Top_2016_songs.csv Sixteen_TS
+
+.mode "csv"
+.seperator ","
+.import Top_2015_songs.csv Fifteen_TS
+
+
+
+
+
+
+
