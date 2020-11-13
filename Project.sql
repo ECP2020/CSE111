@@ -136,15 +136,15 @@ CREATE TABLE NewestSongs(
 
 .mode "csv"
 .seperator ","
-.import Person Person
+.import Person.csv Person
 
 .mode "csv"
 .seperator ","
-.import RadioStations Radio_Stations_LA
+.import RadioStations.csv Radio_Stations_LA
 
 .mode "csv"
 .seperator ","
-.import Genre Genre
+.import Genre.csv Genre
 
 
 
