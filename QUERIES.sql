@@ -57,6 +57,63 @@ SELECT r_freq, r_signal
 FROM RadioStations
 WHERE r_format = "Regional Mexican";
 
+--#11
+--Album of the song Dynamite 
+SELECT TS_album from Global_TS
+WHERE TS_title = 'Dynamite';
+
+--#12
+--Songs by Billie Eilish in 2019
+SELECT nine_ts_title
+FROM Nineteen_TS
+WHERE nine_ts_artist = 'Billie Eilish';
+
+--#13
+--Albums by The Weeknd in 2018
+SELECT eight_album
+FROM Eightteen_TS
+WHERE eight_ts_artist = 'The Weeknd'; 
+
+--#14
+--First 10 songs from 2017 top hit list 
+SELECT seven_ts_title
+FROM Seventeen_TS
+LIMIT 10;
+
+--#15
+--First 10 albums from 2016 top hit list 
+SELECT six_ts_album
+FROM Sixteen_TS
+LIMIT 10;
+
+--#16
+--Count how many songs an artist has on Global_TS
+SELECT COUNT(six_ts_title)
+FROM Sixteen_TS
+WHERE six_ts_artist = 'Drake';
+
+--#17
+--Prints album name with artist and song 
+SELECT five_ts_title, five_ts_artist, five_ts_album
+FROM Fifteen_TS
+LIMIT 20;
+
+--#18
+SELECT *
+FROM RadioStations
+WHERE r_format= 'Hip Hop'; 
+
+--#19
+SELECT eight_ts_title, eight_ts_artist 
+FROM Eightteen_TS
+WHERE eight_ts_artist LIKE "%a";
+
+
+--#20
+SELECT nine_ts_artist, nine_ts_title
+FROM Nineteen_TS
+WHERE nine_ts_title> 1;
+
 SELECT *
 FROM Global_TS;
 
@@ -66,3 +123,5 @@ FROM USA_TS;
 SELECT * 
 FROM Eightteen_TS;
 
+SELECT TS_title
+FROM Global_TS
