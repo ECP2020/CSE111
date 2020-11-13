@@ -131,7 +131,7 @@ WHERE TS_title = "positions";
 SELECT *
 FROM Global_TS;
 
---#22 deleting the Jazz Genre
+--#23 deleting the Jazz Genre
 DELETE FROM Genre WHERE 
 g_name='Jazz';
 SELECT *
