@@ -86,6 +86,7 @@ SELECT six_ts_album
 FROM Sixteen_TS
 LIMIT 10;
 
+
 --#16
 --Count how many songs an artist has on Global_TS
 SELECT COUNT(six_ts_title)
@@ -112,7 +113,9 @@ WHERE eight_ts_artist LIKE "%a";
 --#20
 SELECT nine_ts_artist, nine_ts_title
 FROM Nineteen_TS
-WHERE nine_ts_title> 1;
+GROUP BY nine_ts_artist
+ORDER BY nine_ts_artist;
+
 
 --#21-- Updating the table year 
 UPDATE Global_TS
