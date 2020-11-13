@@ -114,6 +114,23 @@ SELECT nine_ts_artist, nine_ts_title
 FROM Nineteen_TS
 WHERE nine_ts_title> 1;
 
+--#21-- Updating the table year 
+UPDATE Global_TS
+SET TS_Year = "10-30-2020"
+WHERE TS_title = "positions";
+
+--#22-- Updating the artist
+
+UPDATE Global_TS
+SET TS_artist = "Ari"
+WHERE TS_title = "positions"; 
+
+SELECT *
+FROM Global_TS;
+
+--#22 deleting the Jazz Genre
+DELETE FROM Genre WHERE 
+g_name='Jazz';
 SELECT *
 FROM Global_TS;
 
