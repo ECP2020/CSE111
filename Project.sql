@@ -94,10 +94,12 @@ CREATE TABLE Genre(
 	g_name DECIMAL(3, 0) not null, 
 	g_descrption varchar(25) not null, 
 );
-CREATE TABLE RadioStations(
-	r_name char(25) not null, 
+create table RadioStations(
+	r_freq char(25) not null, 
+	r_signal char (10) not null,
 	r_location VARCHAR(25) not null,
-	r_songs char(25) not null,
+	r_schools char(100) null,
+	r_format char(50) null, 
 );
 CREATE TABLE NewestSongs(
 	NS_currentyear date not null,
@@ -131,6 +133,15 @@ CREATE TABLE NewestSongs(
 .mode "csv"
 .seperator ","
 .import Top_2015_songs.csv Fifteen_TS
+
+.mode "csv"
+.seperator ","
+.import Person Person
+
+.mode "csv"
+.seperator ","
+.import RadioStations Radio_Stations_LA
+
 
 
 
