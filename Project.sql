@@ -140,7 +140,7 @@ CREATE TABLE NewestSongs(
 
 .mode "csv"
 .seperator ","
-.import RadioStations.csv Radio_Stations_LA
+.import Radio_Stations_LA.csv RadioStations
 
 .mode "csv"
 .seperator ","
