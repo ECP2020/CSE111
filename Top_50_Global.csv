@@ -1,50 +1,50 @@
-Track name, Artist name, Album, Playlist name, Type, ISRC
-positions,Ariana Grande,positions,Global Top 50,Playlist track,USUM72019412
-Mood (feat. iann dior),24kGoldn,Mood (feat. iann dior),Global Top 50,Playlist track,USQX92003025
-"Lemonade (feat. Gunna, Don Toliver & NAV)",Internet Money,B4 The Storm,Global Top 50,Playlist track,QZJ842000368
-Dynamite,BTS,Dynamite (DayTime Version),Global Top 50,Playlist track,QM7282022872
-What You Know Bout Love,Pop Smoke,Shoot For The Stars Aim For The Moon,Global Top 50,Playlist track,USUM72013339
-WAP (feat. Megan Thee Stallion),Cardi B,WAP (feat. Megan Thee Stallion),Global Top 50,Playlist track,USAT22005111
-Lonely (with benny blanco),Justin Bieber,Lonely (with benny blanco),Global Top 50,Playlist track,USUM72019170
-Hawái,Maluma,PAPI JUANCHO,Global Top 50,Playlist track,USSD12000190
-Blinding Lights,The Weeknd,After Hours,Global Top 50,Playlist track,USUG11904206
-Holy (feat. Chance The Rapper),Justin Bieber,Holy,Global Top 50,Playlist track,USUM72017013
-Watermelon Sugar,Harry Styles,Fine Line,Global Top 50,Playlist track,USSM11912587
-For The Night (feat. Lil Baby & DaBaby),Pop Smoke,Shoot For The Stars Aim For The Moon,Global Top 50,Playlist track,USUM72013355
-Head & Heart (feat. MNEK),Joel Corry,Head & Heart (feat. MNEK),Global Top 50,Playlist track,UK4ZF2000305
-you broke me first,Tate McRae,you broke me first,Global Top 50,Playlist track,USRC12000832
-Put Your Records On,Ritt Momney,Put Your Records On,Global Top 50,Playlist track,USQX92004148
-ROCKSTAR (feat. Roddy Ricch),DaBaby,BLAME IT ON BABY,Global Top 50,Playlist track,USUM72007941
-Relación - Remix,Sech,Relación (Remix),Global Top 50,Playlist track,QM9WM2000051
-Wonder,Shawn Mendes,Wonder,Global Top 50,Playlist track,USUM72018522
-Heather,Conan Gray,Kid Krow,Global Top 50,Playlist track,USUM71924264
-Savage Love (Laxed - Siren Beat),Jawsh 685,Savage Love (Laxed - Siren Beat),Global Top 50,Playlist track,USSM12003798
-Someone You Loved,Lewis Capaldi,Divinely Uninspired To A Hellish Extent,Global Top 50,Playlist track,DEUM71807062
-Roses - Imanbek Remix,SAINt JHN,Roses (Imanbek Remix),Global Top 50,Playlist track,RUB421901499
-La Tóxica,Farruko,La Tóxica,Global Top 50,Playlist track,USSD12000175
-Vida de Rico,Camilo,Vida de Rico,Global Top 50,Playlist track,USSD12000388
-UN DIA (ONE DAY) (Feat. Tainy),J Balvin,UN DIA (ONE DAY) (Feat. Tainy),Global Top 50,Playlist track,QZM5U2000001
-Take You Dancing,Jason Derulo,Take You Dancing,Global Top 50,Playlist track,USAT22004479
-Dreams - 2004 Remaster,Fleetwood Mac,Rumours (Super Deluxe),Global Top 50,Playlist track,USWB11301111
-La Curiosidad,Jay Wheeler,Platonicos,Global Top 50,Playlist track,USUYG1313832
-Before You Go,Lewis Capaldi,Divinely Uninspired To A Hellish Extent (Extended Edition),Global Top 50,Playlist track,DEUM71905868
-Se Te Nota (with Guaynaa),Lele Pons,Se Te Nota (with Guaynaa),Global Top 50,Playlist track,USUM72016220
-Ice Cream (with Selena Gomez),BLACKPINK,THE ALBUM,Global Top 50,Playlist track,KRA402000131
-Breaking Me,Topic,Breaking Me,Global Top 50,Playlist track,DEUM71906724
-Midnight Sky,Miley Cyrus,Midnight Sky,Global Top 50,Playlist track,USRC12002653
-POPSTAR (feat. Drake),DJ Khaled,POPSTAR (feat. Drake),Global Top 50,Playlist track,USSM12004501
-Dance Monkey,Tones And I,Dance Monkey,Global Top 50,Playlist track,QZES71982312
-Lovesick Girls,BLACKPINK,THE ALBUM,Global Top 50,Playlist track,KRA402000136
-Una Locura,Ozuna,ENOC,Global Top 50,Playlist track,USXDR2000574
-Levitating (feat. DaBaby),Dua Lipa,Future Nostalgia,Global Top 50,Playlist track,GBAHT2000942
-Jeans,Justin Quiles,Jeans,Global Top 50,Playlist track,USWL12000290
-"Ay, DiOs Mío!",KAROL G,"Ay, DiOs Mío!",Global Top 50,Playlist track,USUM72013593
-Despeinada,Ozuna,ENOC,Global Top 50,Playlist track,USXDR2000590
-La Nota,Manuel Turizo,La Nota,Global Top 50,Playlist track,QZDYA1800024
-Come & Go (with Marshmello),Juice WRLD,Legends Never Die,Global Top 50,Playlist track,USUG12001904
-Golden,Harry Styles,Fine Line,Global Top 50,Playlist track,USSM11912586
-Daisy,Ashnikko,Daisy,Global Top 50,Playlist track,GBAYE2000596
-Mood Swings (feat. Lil Tjay),Pop Smoke,Shoot For The Stars Aim For The Moon,Global Top 50,Playlist track,USUM72013632
-How You Like That,BLACKPINK,THE ALBUM,Global Top 50,Playlist track,KRA402000111
-Forever After All,Luke Combs,What You See Ain't Always What You Get (Deluxe Edition),Global Top 50,Playlist track,US6XF2000192
-MORE,K/DA,MORE,Global Top 50,Playlist track,QZH6S1900273
+TS_title,TS_artist,TS_album,TS_playlist,TS_type,TS_ISRC,TS_rank_number,TS_Year,TS_genre
+positions,Ariana Grande,positions,Global Top 50,Playlist track,USUM72019412,,,
+Mood (feat. iann dior),24kGoldn,Mood (feat. iann dior),Global Top 50,Playlist track,USQX92003025,,,
+"Lemonade (feat. Gunna, Don Toliver & NAV)",Internet Money,B4 The Storm,Global Top 50,Playlist track,QZJ842000368,,,
+Dynamite,BTS,Dynamite (DayTime Version),Global Top 50,Playlist track,QM7282022872,,,
+What You Know Bout Love,Pop Smoke,Shoot For The Stars Aim For The Moon,Global Top 50,Playlist track,USUM72013339,,,
+WAP (feat. Megan Thee Stallion),Cardi B,WAP (feat. Megan Thee Stallion),Global Top 50,Playlist track,USAT22005111,,,
+Lonely (with benny blanco),Justin Bieber,Lonely (with benny blanco),Global Top 50,Playlist track,USUM72019170,,,
+Hawái,Maluma,PAPI JUANCHO,Global Top 50,Playlist track,USSD12000190,,,
+Blinding Lights,The Weeknd,After Hours,Global Top 50,Playlist track,USUG11904206,,,
+Holy (feat. Chance The Rapper),Justin Bieber,Holy,Global Top 50,Playlist track,USUM72017013,,,
+Watermelon Sugar,Harry Styles,Fine Line,Global Top 50,Playlist track,USSM11912587,,,
+For The Night (feat. Lil Baby & DaBaby),Pop Smoke,Shoot For The Stars Aim For The Moon,Global Top 50,Playlist track,USUM72013355,,,
+Head & Heart (feat. MNEK),Joel Corry,Head & Heart (feat. MNEK),Global Top 50,Playlist track,UK4ZF2000305,,,
+you broke me first,Tate McRae,you broke me first,Global Top 50,Playlist track,USRC12000832,,,
+Put Your Records On,Ritt Momney,Put Your Records On,Global Top 50,Playlist track,USQX92004148,,,
+ROCKSTAR (feat. Roddy Ricch),DaBaby,BLAME IT ON BABY,Global Top 50,Playlist track,USUM72007941,,,
+Relación - Remix,Sech,Relación (Remix),Global Top 50,Playlist track,QM9WM2000051,,,
+Wonder,Shawn Mendes,Wonder,Global Top 50,Playlist track,USUM72018522,,,
+Heather,Conan Gray,Kid Krow,Global Top 50,Playlist track,USUM71924264,,,
+Savage Love (Laxed - Siren Beat),Jawsh 685,Savage Love (Laxed - Siren Beat),Global Top 50,Playlist track,USSM12003798,,,
+Someone You Loved,Lewis Capaldi,Divinely Uninspired To A Hellish Extent,Global Top 50,Playlist track,DEUM71807062,,,
+Roses - Imanbek Remix,SAINt JHN,Roses (Imanbek Remix),Global Top 50,Playlist track,RUB421901499,,,
+La Tóxica,Farruko,La Tóxica,Global Top 50,Playlist track,USSD12000175,,,
+Vida de Rico,Camilo,Vida de Rico,Global Top 50,Playlist track,USSD12000388,,,
+UN DIA (ONE DAY) (Feat. Tainy),J Balvin,UN DIA (ONE DAY) (Feat. Tainy),Global Top 50,Playlist track,QZM5U2000001,,,
+Take You Dancing,Jason Derulo,Take You Dancing,Global Top 50,Playlist track,USAT22004479,,,
+Dreams - 2004 Remaster,Fleetwood Mac,Rumours (Super Deluxe),Global Top 50,Playlist track,USWB11301111,,,
+La Curiosidad,Jay Wheeler,Platonicos,Global Top 50,Playlist track,USUYG1313832,,,
+Before You Go,Lewis Capaldi,Divinely Uninspired To A Hellish Extent (Extended Edition),Global Top 50,Playlist track,DEUM71905868,,,
+Se Te Nota (with Guaynaa),Lele Pons,Se Te Nota (with Guaynaa),Global Top 50,Playlist track,USUM72016220,,,
+Ice Cream (with Selena Gomez),BLACKPINK,THE ALBUM,Global Top 50,Playlist track,KRA402000131,,,
+Breaking Me,Topic,Breaking Me,Global Top 50,Playlist track,DEUM71906724,,,
+Midnight Sky,Miley Cyrus,Midnight Sky,Global Top 50,Playlist track,USRC12002653,,,
+POPSTAR (feat. Drake),DJ Khaled,POPSTAR (feat. Drake),Global Top 50,Playlist track,USSM12004501,,,
+Dance Monkey,Tones And I,Dance Monkey,Global Top 50,Playlist track,QZES71982312,,,
+Lovesick Girls,BLACKPINK,THE ALBUM,Global Top 50,Playlist track,KRA402000136,,,
+Una Locura,Ozuna,ENOC,Global Top 50,Playlist track,USXDR2000574,,,
+Levitating (feat. DaBaby),Dua Lipa,Future Nostalgia,Global Top 50,Playlist track,GBAHT2000942,,,
+Jeans,Justin Quiles,Jeans,Global Top 50,Playlist track,USWL12000290,,,
+"Ay, DiOs Mío!",KAROL G,"Ay, DiOs Mío!",Global Top 50,Playlist track,USUM72013593,,,
+Despeinada,Ozuna,ENOC,Global Top 50,Playlist track,USXDR2000590,,,
+La Nota,Manuel Turizo,La Nota,Global Top 50,Playlist track,QZDYA1800024,,,
+Come & Go (with Marshmello),Juice WRLD,Legends Never Die,Global Top 50,Playlist track,USUG12001904,,,
+Golden,Harry Styles,Fine Line,Global Top 50,Playlist track,USSM11912586,,,
+Daisy,Ashnikko,Daisy,Global Top 50,Playlist track,GBAYE2000596,,,
+Mood Swings (feat. Lil Tjay),Pop Smoke,Shoot For The Stars Aim For The Moon,Global Top 50,Playlist track,USUM72013632,,,
+How You Like That,BLACKPINK,THE ALBUM,Global Top 50,Playlist track,KRA402000111,,,
+Forever After All,Luke Combs,What You See Ain't Always What You Get (Deluxe Edition),Global Top 50,Playlist track,US6XF2000192,,,
+MORE,K/DA,MORE,Global Top 50,Playlist track,QZH6S1900273,,,
