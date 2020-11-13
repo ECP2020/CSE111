@@ -92,7 +92,7 @@ CREATE TABLE Billboards (
 );
 CREATE TABLE Genre(
 	g_name DECIMAL(3, 0) not null, 
-	g_descrption varchar(25) not null, 
+	g_descrption varchar(25) null, 
 );
 create table RadioStations(
 	r_freq char(25) not null, 
@@ -142,7 +142,9 @@ CREATE TABLE NewestSongs(
 .seperator ","
 .import RadioStations Radio_Stations_LA
 
-
+.mode "csv"
+.seperator ","
+.import Genre Genre
 
 
 
