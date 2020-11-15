@@ -123,19 +123,28 @@ SET TS_Year = "10-30-2020"
 WHERE TS_title = "positions";
 
 --#22-- Updating the artist
-
 UPDATE Global_TS
 SET TS_artist = "Ari"
 WHERE TS_title = "positions"; 
-
-SELECT *
-FROM Global_TS;
 
 --#23 deleting the Jazz Genre
 DELETE FROM Genre WHERE 
 g_name='Jazz';
 SELECT *
 FROM Global_TS;
+
+--#24 
+--Songs Trending Global, and USA 2020 and in 2019
+SELECT USA_TS.USA_TS_title, Global_TS.TS_title
+FROM USA_TS, Global_TS, Nineteen_TS
+WHERE USA_TS.USA_TS_ISRC = Global_TS.TS_ISRC 
+AND Nineteen_TS.nine_ISRC = Global_TS.TS_ISRC;
+
+--#25
+SELECT U.USA_TS_title,G.TS_title, G.TS_artist, G.TS_ISRC, U.USA_TS_ISRC
+FROM Global_TS G, USA_TS U
+INNER JOIN USA_TS ON U.USA_TS_ISRC = G.TS_ISRC
+GROUP BY G.TS_ISRC;
 
 SELECT *
 FROM USA_TS;
