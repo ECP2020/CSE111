@@ -154,6 +154,13 @@ FROM Eightteen_TS, Global_TS, Nineteen_TS
 WHERE Eightteen_TS.eight_ts_artist = Global_TS.TS_artist
 AND Nineteen_TS.nine_ts_artist = Global_TS.TS_artist;
 
+--#27 
+--Artist that match 2016 and in 2020
+SELECT Sixteen_TS.six_ts_artist
+FROM Sixteen_TS, Global_TS
+WHERE Sixteen_TS.six_ts_artist = Global_TS.TS_artist;
+
+
 SELECT *
 FROM USA_TS;
 
