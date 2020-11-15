@@ -146,6 +146,14 @@ FROM Global_TS G, USA_TS U
 INNER JOIN USA_TS ON U.USA_TS_ISRC = G.TS_ISRC
 GROUP BY G.TS_ISRC;
 
+
+--#26
+--Artist from the 2018, 2019 that match the Global artists trending now 
+SELECT Eightteen_TS.eight_ts_artist, Eightteen_TS.eight_ts_title, Nineteen_TS.nine_ts_artist, Nineteen_TS.nine_ts_title
+FROM Eightteen_TS, Global_TS, Nineteen_TS
+WHERE Eightteen_TS.eight_ts_artist = Global_TS.TS_artist
+AND Nineteen_TS.nine_ts_artist = Global_TS.TS_artist;
+
 SELECT *
 FROM USA_TS;
 
