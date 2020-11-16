@@ -160,6 +160,24 @@ SELECT Sixteen_TS.six_ts_artist
 FROM Sixteen_TS, Global_TS
 WHERE Sixteen_TS.six_ts_artist = Global_TS.TS_artist;
 
+--#28 
+SELECT F.five_ts_title, S.seven_ts_title
+FROM Fifteen_TS F, Seventeen_TS S
+INNER JOIN Seventeen_TS ON S.seven_ts_artist = F.five_ts_artist
+WHERE F.five_ts_artist = 'Rihanna';
+
+--#29
+SELECT S.seven_ts_title, E.eight_ts_title,  U.USA_TS_title
+FROM Eightteen_TS E, Seventeen_TS S, USA_TS U
+INNER JOIN Seventeen_TS ON S.seven_ts_artist = E.eight_ts_artist
+INNER JOIN USA_TS ON U.USA_TS_artist = S.seven_ts_artist
+WHERE E.eight_ts_artist = 'Post Malone';
+
+--#30
+SELECT U.USA_TS_album,G.TS_album, G.TS_artist
+FROM Global_TS G, USA_TS U
+INNER JOIN USA_TS ON U.USA_TS_album = G.TS_album
+GROUP BY G.TS_album;
 
 SELECT *
 FROM USA_TS;
