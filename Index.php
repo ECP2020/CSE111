@@ -1,8 +1,12 @@
 <?php 
 
-$conn = mysqli_connect('data.sqlite');
-$search = $mysqli_real_escape_string($_POST['search'])
-
+// Check connection
+$conn = new SQLite3("data.sqlite");
+// Check connection
+    if(!$conn) 
+    {
+        die( "Not connected to DB");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,20 +30,22 @@ $search = $mysqli_real_escape_string($_POST['search'])
 <body bgcolor = #a45db8>
 
 <div class="sidebar">
+  <a href = "Index.php"> Home </a>
   <a href="TrendingSongs.php">Trending Songs</a>
   <a href="Albums.php">Albums</a>
   <a href="RadioStations.php">Radio Stations</a>
   <a href="UserLogin.php">Login</a>
+  <a href= "PastYears.php"> Past Trending Songs </a>
 </div>
 <center><a class = "logo"  href = Index.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
 
  <!-- The form -->
- <center><form class="example" action="Index.php" method = "GET">
+ <center><form class="example" action="Index.php" method = "POST">
         <input id = "search" type="text" placeholder="Search Songs" name="search">
-        <button class = "btn" type="submit" name = "BTN"><i class="fa fa-search"></i></button>
+        <button type="submit" name = "submit"><i class="fa fa-search"></i></button>
         </form></center>
 
-
+        <center> <h1> Search Results for: <?php echo $_POST["search"]; ?> </h1> <center>
 <div class= "Tables">
 <?php 
 
@@ -52,18 +58,49 @@ $search = $mysqli_real_escape_string($_POST['search'])
     //    echo $value. "<br>";
     //}
 
+    //$search =$_POST['search'];
+    //$search = htmlspecialchars($search);
+    //$search = mtsql_real_escape_string($search);
+    //$results = mysqli_query("SELECT * FROM USA_TS WHERE USA_TS_title LIKE '%".$search."%')") ;
+
+    //if(mysql_num_rows($results) > 0)
+    //{
+    //    while($row = mysql_fetch_array($results))
+    //    {
+    //        echo "<h3>" . $row['USA_title']."</h3>";
+    //    }
+    //}
+    //else 
+    //{
+    //    echo "NO RESULTS";
+    //}
+    $Value = $_POST["search"];
+  
+    $sql = "SELECT * FROM USA_TS WHERE USA_TS_title LIKE '%$Value%' OR USA_TS_artist LIKE '%$Value%'";
+
+    $sql2 = "SELECT * FROM Global_TS WHERE TS_title LIKE '%$Value%' OR TS_artist LIKE '%$Value%'";
+
     
-    $result = mysql_query("SELECT * FROM USA_TS WHERE USA_TS_title LIKE $search%) ;
-    while($row = mysql_fetch_assoc($result))
-    {
-        echo "<div id = 'link' onclick = 'addText(\"".$row['USA_TS_title']."\");'>" .$row['USA_TS_title']. "</div>";
-    }
+     $result = $conn->prepare($sql);
+     $queryResult = $result->execute();
+
+        while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
+        {
+            echo "<div>
+                <h3>".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']."  </h3>
+            </div>";
+        } 
 
 
+    $result2 = $conn->prepare($sql2);
+    $queryResult2 = $result2->execute();
 
-    //echo $resultCheck['TS_album'];
-    //echo $resultCheck['TS_title'];
-    //echo $resultCheck['TS_artist'];
+        while($row = $queryResult2->fetchArray(SQLITE3_ASSOC))
+        {
+            echo "<div>
+                <h3>".$row['TS_title']." ".$row['TS_artist']." ".$row['TS_album']."  </h3>
+            </div>";
+        } 
 ?>
 </div>
 
