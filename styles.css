@@ -52,10 +52,17 @@
       float: none;
     }
   }
-
-.years {
+  .years {
     overflow: hidden;
     background-color: #fff;
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+    left: 10px;
+    background: #fff;
+    overflow-x: hidden;
+    padding: 8px 0;
  
   }
   .years a {
@@ -73,4 +80,14 @@
   @media screen and (max-height: 450px) {
     .years {padding-top: 15px;}
     .years a {font-size: 18px;}
+  }
+  .songs
+  {
+    text-align:center;
+    font-weight:bold;
+    height: 40px;
+    border: 2px solid #fff;
+    padding: .5px;
+    margin: 10px;
+    background-color: #D3D3D3;
   }

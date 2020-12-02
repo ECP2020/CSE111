@@ -36,8 +36,8 @@ $conn = new SQLite3("data.sqlite");
   <a href="RadioStations.php">Radio Stations</a>
   <a href="UserLogin.php">Login</a>
   <a href= "PastYears.php"> Past Trending Songs </a>
+
 </div>
-</body> 
 
 <div class ="years">
     <a href = #2015> 2015 </a>
@@ -46,6 +46,8 @@ $conn = new SQLite3("data.sqlite");
     <a href = #2018> 2018 </a>
     <a href = #2019> 2019 </a>
 
+</div>
 
+</body>
 </header>
 </html>

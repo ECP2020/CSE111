@@ -22,7 +22,6 @@ $conn = new SQLite3("data.sqlite");
     <link href = "css/styles.css" rel = "stylesheet" type = "text/css" > 
     <!-- TITLE --> 
     <title>Trending Songs</title>
-    <center> <h3> TRENDING SONGS </h3></center>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -30,6 +29,16 @@ $conn = new SQLite3("data.sqlite");
 </head>
 <header> <!-- adding the css styles -->
 <body bgcolor = #a45db8>
+
+<div class="sidebar">
+  <a href = "Index.php"> Home </a>
+  <a href="TrendingSongs.php">Trending Songs</a>
+  <a href="Albums.php">Albums</a>
+  <a href="RadioStations.php">Radio Stations</a>
+  <a href="UserLogin.php">Login</a>
+  <a href= "PastYears.php"> Past Trending Songs </a>
+</div>
+<center> <h3> TRENDING SONGS </h3></center>
 <?php 
 
 
@@ -40,7 +49,7 @@ $conn = new SQLite3("data.sqlite");
 
         while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
         {
-            echo "<div>
+            echo "<div class = 'songs'>
                 <h3>".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']."  </h3>
             </div>";
         } 
