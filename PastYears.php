@@ -39,7 +39,7 @@ $conn = new SQLite3("data.sqlite");
 </div>
 </body> 
 
-<div class ="Years">
+<div class ="years">
     <a href = #2015> 2015 </a>
     <a href = #2016> 2016 </a>
     <a href = #2017> 2017 </a>
