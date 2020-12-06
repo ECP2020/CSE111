@@ -47,6 +47,7 @@ $conn = new SQLite3("data.sqlite");
 
         <center> <h1> Search Results for: <?php echo $_POST["search"]; ?> </h1> <center>
 <div class= "Tables">
+<h3> Title Artist Album </h3>
 <?php 
 
     //$sql = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS;";
@@ -76,11 +77,19 @@ $conn = new SQLite3("data.sqlite");
     //}
     $Value = $_POST["search"];
   
-    $sql = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS WHERE USA_TS_title LIKE '%$Value%' OR USA_TS_artist LIKE '%$Value%' LIMIT 5";
+    $sql = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS WHERE USA_TS_title LIKE '%$Value%' OR USA_TS_artist LIKE '%$Value%' LIMIT 2";
 
     $sql2 = "SELECT TS_title, TS_artist, TS_album FROM Global_TS WHERE TS_title LIKE '%$Value%' OR TS_artist LIKE '%$Value%'";
 
-    $sql3 = "SELECT eight_ts_title, eight_ts_artist, eight_album FROM Eightteen_TS WHERE eight_ts_title LIKE '%$Value%' OR eight_ts_artist LIKE '%$Value%'";
+    $sql3 = "SELECT eight_ts_title, eight_ts_artist, eight_album FROM Eightteen_TS WHERE eight_ts_title LIKE '%$Value%' OR eight_ts_artist LIKE '%$Value%' LIMIT 2";
+
+    $sql4 = "SELECT seven_ts_title, seven_ts_artist, seven_ts_album FROM Seventeen_TS WHERE seven_ts_title LIKE '%$Value' OR seven_ts_artist LIKE '%$Value%' LIMIT 2 ";
+
+    $sql5 = "SELECT six_ts_title, six_ts_artist, six_ts_album FROM Sixteen_TS WHERE six_ts_title LIKE '%$Value' OR six_ts_artist LIKE '$Value' LIMIT 2";
+
+    $sql6 = "SELECT five_ts_title, five_ts_artist, five_ts_album FROM Fifteen_TS WHERE five_ts_title LIKE '%$Value' OR five_ts_artist LIKE '%$Value' LIMIT 2";
+
+    $sql7 = "SELECT nine_ts_title, nine_ts_artist, nine_album FROM Nineteen_TS WHERE nine_ts_title LIKE '%$Value' OR nine_ts_artist LIKE '%$Value' LIMIT 2 ";
     
      $result = $conn->prepare($sql);
      $queryResult = $result->execute();
@@ -112,7 +121,45 @@ $conn = new SQLite3("data.sqlite");
                 <h3>".$row['eight_ts_title']." ".$row['eight_ts_artist']." ".$row['eight_album']."  </h3>
             </div>";
         } 
+    
+    $result4 = $conn->prepare($sql4);
+    $queryResult4 = $result4->execute();
 
+    while($row = $queryResult4->fetchArray(SQLITE3_ASSOC))
+        {
+            echo "<div class = 'songs'>
+                <h3>".$row['seven_ts_title']." ".$row['seven_ts_artist']." ".$row['seven_ts_album']."  </h3>
+            </div>";
+        } 
+
+        $result5 = $conn->prepare($sql5);
+        $queryResult5 = $result5->execute();
+    
+        while($row = $queryResult5->fetchArray(SQLITE3_ASSOC))
+            {
+                echo "<div class = 'songs'>
+                    <h3>".$row['five_ts_title']." ".$row['five_ts_artist']." ".$row['five_ts_album']."  </h3>
+                </div>";
+            } 
+        $result6 = $conn->prepare($sql6);
+        $queryResult6= $result6->execute();
+        
+        while($row = $queryResult6->fetchArray(SQLITE3_ASSOC))
+            {
+                    echo "<div class = 'songs'>
+                        <h3>".$row['six_ts_title']." ".$row['six_ts_artist']." ".$row['six_ts_album']."  </h3>
+                    </div>";
+            } 
+        
+        $result7 = $conn->prepare($sql7);
+        $queryResult7= $result7->execute();
+            
+        while($row = $queryResult7->fetchArray(SQLITE3_ASSOC))
+             {
+                        echo "<div class = 'songs'>
+                            <h3>".$row['nine_ts_title']." ".$row['nine_ts_artist']." ".$row['nine_album']."  </h3>
+                        </div>";
+            } 
 
 
 

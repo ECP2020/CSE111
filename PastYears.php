@@ -40,11 +40,11 @@ $conn = new SQLite3("data.sqlite");
 </div>
 
 <div class ="years">
-    <a href = #2015> 2015 </a>
-    <a href = #2016> 2016 </a>
-    <a href = #2017> 2017 </a>
-    <a href = #2018> 2018 </a>
-    <a href = #2019> 2019 </a>
+    <a href = 2015.php> 2015 </a>
+    <a href = 2016.php> 2016 </a>
+    <a href = 2017.php> 2017 </a>
+    <a href = 2018.php> 2018 </a>
+    <a href = 2019.php> 2019 </a>
 
 </div>
 

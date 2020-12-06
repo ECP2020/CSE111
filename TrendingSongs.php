@@ -38,6 +38,8 @@ $conn = new SQLite3("data.sqlite");
   <a href="UserLogin.php">Login</a>
   <a href= "PastYears.php"> Past Trending Songs </a>
 </div>
+
+<center><a class = "logo"  href = Index.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
 <center> <h3> TRENDING SONGS </h3></center>
 <?php 
 
