@@ -42,7 +42,8 @@ if($_SESSION['user_email'] = $result->fetchArray(SQLITE3_ASSOC))
 } 
 else 
 {
-    echo "<h3> fail </h3> ";
+    //go back to login if username is wrong
+    header("location: UserLogin.php");
 }
 
 
