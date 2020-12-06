@@ -28,7 +28,22 @@ if($_SESSION['user_email'] = $result->fetchArray(SQLITE3_ASSOC))
     //$email;
     //$_SESSION['user_email']= $row['P_email'];
     //$name = $row['P_name'];
+
+    while($row = $result->fetchArray(SQLITE3_ASSOC))
+    {
+        $email = $row['P_email'];
+        $name = $row['P_name'];
+        echo "<h3> Welcome ," .$name. "</h3> "; 
+
+        
+    } 
+
+
 } 
+else 
+{
+    echo "<h3> fail </h3> ";
+}
 
 
 
