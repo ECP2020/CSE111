@@ -50,7 +50,7 @@ $conn = new SQLite3("data.sqlite");
 <?php 
 
 
-$sql = "SELECT seven_ts_title, seven_ts_artist, seven_ts_album FROM Seventeen_TS WHERE seven_ts_title";
+$sql = "SELECT seven_ts_title, seven_ts_artist, seven_ts_album FROM Seventeen_TS";
 
      $result = $conn->prepare($sql);
      $queryResult = $result->execute();
