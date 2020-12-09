@@ -76,8 +76,7 @@ $conn = new SQLite3("data.sqlite");
     //    echo "NO RESULTS";
     //}
     //$Value = $conn -> real_escape_string($_POST["search"]);
-
-    $Value = $_POST["search"];
+     $Value= isset($_POST['search']) ? $_POST['search'] : '';
   
     //$sql = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS WHERE USA_TS_title LIKE '%$Value%' OR USA_TS_artist LIKE '%$Value%' LIMIT 2";
 
