@@ -53,6 +53,7 @@ $conn = new SQLite3("data.sqlite");
 
      $result = $conn->prepare($sql);
      $queryResult = $result->execute();
+     $songs = '';
 
         while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
         {
@@ -62,7 +63,7 @@ $conn = new SQLite3("data.sqlite");
             echo "<form  id = 'formID' action = 'TrendingSongsusers.php' method = 'POST'>
             
                 <div class = 'songs'>
-                <p><input type= 'checkbox' name = 'songs[]' value = ".$row['USA_TS_title']." ".$row['USA_TS_artist']."  ".$row['USA_TS_album']." /> ".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']."  </p>
+                <p><input type= 'checkbox' name = songs[] value = ".$row['USA_TS_title']." ".$row['USA_TS_artist']."  ".$row['USA_TS_album']." /> ".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']."  </p>
                 </div>
                 </form>";
 
@@ -83,32 +84,35 @@ $conn = new SQLite3("data.sqlite");
         }
         
         echo "<form id = 'formID' action = 'TrendingSongsusers.php' method = 'POST' >
-        <input type = 'submit' value = 'submit' name = 'submit'>
+        <input type='submit' name='submit' value='Submit'/> 
         </form>" ;
         //$songs = $_POST["SelectedSongs"];
 
 
-        //$_SESSION['user_email'] = $_POST['userEmail'];
+
+
+        //echo "<center><h3> Welcome, " .$songs. "</h3></center>"; 
 
         //echo "<center><h3> Welcome, " .$songs. "</h3></center>"; 
 
         if(isset($_POST['submit']))
         {
-            if(!empty($_POST['submit']))
+            if(!empty($_POST['songs']))
             {
-                echo "<h3> You selected the following songs <h3/>";
-
-                foreach($_POST['submit'] as $songs)
+                foreach($_POST['songs'] as $checked)
                 {
-                    echo '<p>' .$songs. '</p>';
+                  echo $checked."</br>";
                 }
-            }
+            } 
             else 
             {
-                echo 'Please select one option';
-            }
-            
+                echo '<div class="error">Checkbox is not selected!</div>';
+            }   
+
         }
+
+            
+        
         
 ?>
 </div>
