@@ -1,3 +1,4 @@
+
 <?php 
 
 session_start();
@@ -53,7 +54,7 @@ $conn = new SQLite3("data.sqlite");
 
      $result = $conn->prepare($sql);
      $queryResult = $result->execute();
-     $songs = '';
+
 
         while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
         {
@@ -64,10 +65,12 @@ $conn = new SQLite3("data.sqlite");
             
                 <div class = 'songs'>
                 <p><input type= 'checkbox' name = songs[] value = ".$row['USA_TS_title']." ".$row['USA_TS_artist']."  ".$row['USA_TS_album']." /> ".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']."  </p>
+
                 </div>
-                </form>";
+                
+                ";
 
-
+                
             //If(!empty($_POST["selected"]) && is_array($_POST["selected"]))
            // {
              //   If(in_array($songs, $row))
@@ -86,12 +89,6 @@ $conn = new SQLite3("data.sqlite");
         echo "<form id = 'formID' action = 'TrendingSongsusers.php' method = 'POST' >
         <input type='submit' name='submit' value='Submit'/> 
         </form>" ;
-        //$songs = $_POST["SelectedSongs"];
-
-
-
-
-        //echo "<center><h3> Welcome, " .$songs. "</h3></center>"; 
 
         //echo "<center><h3> Welcome, " .$songs. "</h3></center>"; 
 
@@ -101,6 +98,8 @@ $conn = new SQLite3("data.sqlite");
             {
                 foreach($_POST['songs'] as $checked)
                 {
+                
+                  echo "Songs Selected:";
                   echo $checked."</br>";
                 }
             } 
