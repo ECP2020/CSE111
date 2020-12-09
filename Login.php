@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,21 +18,21 @@
 <header> <!-- adding the css styles -->
 <body bgcolor = #a45db8> 
     <div class="sidebar">
-        <a href = "Index.php"> Home </a>
-        <a href="TrendingSongs.php">Trending Songs</a>
-        <a href="Albums.php">Albums</a>
-        <a href="RadioStations.php">Radio Stations</a>
-        <a href= "PastYears.php"> Past Trending Songs </a>
-        <a href ="Logout.php" > Logout </a>
+        <a href ="Indexuser.php"> Home </a>
+        <a href="TrendingSongsusers.php">Trending Songs</a>
+        <a href="albumsuser.php">Albums</a>
+        <a href="RadioStationsuser.php">Radio Stations</a>
+        <a href= "PastYearsuser.php"> Past Trending Songs </a>
+        <a href ="logout.php" > Logout </a>
 </div>
 
-<center><a class = "logo"  href = Index.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
+<center><a class = "logo"  href = Login.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
 </body> 
 </header>
 </html>
 
 <?php 
-
+//include('TrendingSongsUsers.php');
 // Check connection
 $conn = new SQLite3("data.sqlite");
 // Check connection
@@ -42,13 +43,18 @@ $conn = new SQLite3("data.sqlite");
 
 
 $_SESSION['user_email'] = $_POST['userEmail'];
+$_SESSION['search'] = $_POST['SelectedSongs'];
 
 
 //$_SESSION['password'] = $_POST['password'];
 
-
+$query1 = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS";
 
 $query= "SELECT P_email, P_name FROM Person WHERE P_email = '{$_SESSION['user_email']}'";
+
+$statement1 = $conn->prepare($query1);
+$result1 = $statement1->execute();
+
 $statement = $conn->prepare($query);
 $result = $statement->execute();
 
@@ -69,6 +75,16 @@ if($_SESSION['user_email'] = $result->fetchArray(SQLITE3_ASSOC))
 
 
 } 
+if($_SESSION['seach'] = $result1->fetchArray(SQLITE3_ASSOC)) 
+{
+    echo "<center><h3> SL </h3></center> ";
+
+    //$_SESSION['user_email']= $row['P_email'];
+    //$name = $row['P_name'];
+
+
+} 
+
 else 
 {
     //go back to login if username is wrong

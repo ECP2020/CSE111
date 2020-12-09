@@ -30,17 +30,17 @@ $conn = new SQLite3("data.sqlite");
 <body bgcolor = #a45db8>
 
 <div class="sidebar">
-  <a href = "Index.php"> Home </a>
-  <a href="UserLogin.php">Login</a>
-  <a href="TrendingSongs.php">Trending Songs</a>
-  <a href="Albums.php">Albums</a>
-  <a href="RadioStations.php">Radio Stations</a>
-  <a href= "PastYears.php"> Past Trending Songs </a>
+  <a href = "indexuser.php"> Home </a>
+  <a href="TrendingSongsusers.php">Trending Songs</a>
+  <a href="Albumsusers.php">Albums</a>
+  <a href="RadioStationsusers.php">Radio Stations</a>
+  <a href= "pastyearsuser.php"> Past Trending Songs </a>
+  <a href = "logout.php" > Logout </a>
 </div>
-<center><a class = "logo"  href = Index.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
+<center><a class = "logo"  href = indexuser.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
 
  <!-- The form -->
- <center><form class="example" action="Index.php" method = "POST">
+ <center><form class="example" action="indexuser.php" method = "POST">
         <input id = "search" type="text" placeholder="Search Songs" name="search">
         <button type="submit" name = "submit"><i class="fa fa-search"></i></button>
         </form></center>
