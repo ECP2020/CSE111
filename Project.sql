@@ -1,8 +1,11 @@
 CREATE TABLE Albums (
 	artist char(25) not null,
-	year date not null,
-	title char(25) not null,
-	genre char(25) not null,
+	album_name char(25) not null,
+	TS_title char(25) not null,
+	year_date not null,
+	TS_playlist char(25) null,
+	TS_genre char(25) not null,
+	TS_type char(25) null,
 );
 CREATE TABLE Person (
 	P_name char(25) not null,
