@@ -10,7 +10,6 @@ $conn = new SQLite3("data.sqlite");
         die( "Not connected to DB");
     }
 
-
 ?>
 
 
@@ -113,14 +112,59 @@ $conn = new SQLite3("data.sqlite");
                   echo "Songs Selected:";
                   echo $checked."</br>";
 
+                    $conn->close();
 
+                  //$connection = new mysqli("data.sqlite");
+                  //if ($connection->connect_error) {
+                   //   die("Connection failed: " . $connection->connect_error);
+                   // }
+                $user = 'root';
+                $pass = '';
+                $db = 'SelectedItems';
 
-                  $sql2 = "INSERT INTO SelectedItems (checked) VALUES(?)";
+                //New database named SelectedItems
 
-                  $result2 = $conn->prepare($sql2);
-                  $queryResult2 = $result2->execute();
+                $db = new mysqli('localhost', $user, $pass, $db) or die ("unable to connect");
+
+        
+                echo "Connected successfully";
+                    
+                
+                    
+                
+                  $sql = "INSERT INTO Items (userpick) VALUES('$checked')";
+                  //$stmt = $mysqli->prepare();
+
+                  if ($db->query($sql) === TRUE) {
+                    echo "New record created successfully";
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $db->error;
+                  }
+                   
+                   //$conn->exec('ALTER DATABASE data SET READ_WRITE WITH NO_WAIT'); 
+
+                   //$conn->exec('INSERT INTO SelectedItems (checked) VALUES(?)');
+                    
+            
+                
+                 
+             
+
+                  //if ($connection->query($sql2) === TRUE) {
+                   // echo "New record created successfully";
+                  //} else {
+                  //  echo "Error: " . $sql2 . "<br>" . $connection->error;
+                  //}
+                  
 
                 }
+
+
+            
+              
+
+
+
             } 
             else 
             {
