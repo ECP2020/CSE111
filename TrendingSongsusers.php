@@ -2,12 +2,14 @@
 <?php 
 
 session_start();
+
 $conn = new SQLite3("data.sqlite");
 // Check connection
     if(!$conn) 
     {
         die( "Not connected to DB");
     }
+
 
 ?>
 
@@ -33,10 +35,11 @@ $conn = new SQLite3("data.sqlite");
 
 <div class="sidebar">
   <a href = "indexuser.php"> Home </a>
-  <a href="trendingsongsuser.php">Trending Songs</a>
+  <a href="TrendingSongsusers.php">Trending Songs</a>
   <a href="albumsuser.php">Albums</a>
   <a href="RadioStationsuser.php">Radio Stations</a>
   <a href= "pastyearsuser.php"> Past Trending Songs </a>
+  <a href= "login2.php"> Login </a>
   <a href ="logout.php" > Logout </a>
 </div>
 
@@ -56,20 +59,26 @@ $conn = new SQLite3("data.sqlite");
      $queryResult = $result->execute();
 
 
+
         while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
         {
 
             //checked= 'checked'
 
+           // echo $row['USA_TS_title'];
+
             echo "<form  id = 'formID' action = 'TrendingSongsusers.php' method = 'POST'>
             
                 <div class = 'songs'>
-                <p><input type= 'checkbox' name = songs[] value = ".$row['USA_TS_title']." ".$row['USA_TS_artist']."  ".$row['USA_TS_album']." /> ".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']."  </p>
+                <p><input type= 'checkbox' name = songs[] value = ".$row['USA_TS_ISRC']."  /> ".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']." <a href= ".$row['USA_TS_Spotify']."> Listen to Song!</a> </p>
+            
 
-                </div>
-                
-                ";
 
+                </div>";
+
+
+
+         
                 
             //If(!empty($_POST["selected"]) && is_array($_POST["selected"]))
            // {
@@ -86,12 +95,14 @@ $conn = new SQLite3("data.sqlite");
    
         }
         
+        
         echo "<form id = 'formID' action = 'TrendingSongsusers.php' method = 'POST' >
         <input type='submit' name='submit' value='Submit'/> 
         </form>" ;
 
         //echo "<center><h3> Welcome, " .$songs. "</h3></center>"; 
-
+      
+  
         if(isset($_POST['submit']))
         {
             if(!empty($_POST['songs']))
@@ -101,14 +112,22 @@ $conn = new SQLite3("data.sqlite");
                 
                   echo "Songs Selected:";
                   echo $checked."</br>";
+
+
+
+                  $sql2 = "INSERT INTO SelectedItems (checked) VALUES(?)";
+
+                  $result2 = $conn->prepare($sql2);
+                  $queryResult2 = $result2->execute();
+
                 }
             } 
             else 
             {
                 echo '<div class="error">Checkbox is not selected!</div>';
             }   
-
         }
+
 
             
         
