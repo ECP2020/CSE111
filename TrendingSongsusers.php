@@ -38,7 +38,7 @@ $conn = new SQLite3("data.sqlite");
   <a href="albumsuser.php">Albums</a>
   <a href="RadioStationsuser.php">Radio Stations</a>
   <a href= "pastyearsuser.php"> Past Trending Songs </a>
-  <a href= "login2.php"> Login </a>
+  <a href= "login2.php"> Playlist </a>
   <a href ="logout.php" > Logout </a>
 </div>
 

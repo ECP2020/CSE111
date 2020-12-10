@@ -31,10 +31,11 @@ $conn = new SQLite3("data.sqlite");
 
 <div class="sidebar">
 <a href = "indexuser.php"> Home </a>
-  <a href="trendingsongsuser.php">Trending Songs</a>
+  <a href="TrendingSongsusers.php">Trending Songs</a>
   <a href="albumsuser.php">Albums</a>
   <a href="RadioStationsuser.php">Radio Stations</a>
   <a href= "pastyearsuser.php"> Past Trending Songs </a>
+  <a href= "login2.php"> Playlist </a>
   <a href ="logout.php" > Logout </a>
 
 </div>
@@ -42,11 +43,11 @@ $conn = new SQLite3("data.sqlite");
 <center><a class = "logo"  href = pastyearsuser.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
 
 <div class ="years">
-    <a href = 2015.php> 2015 </a>
-    <a href = 2016.php> 2016 </a>
-    <a href = 2017.php> 2017 </a>
-    <a href = 2018.php> 2018 </a>
-    <a href = 2019.php> 2019 </a>
+    <a href = "2015users.php"> 2015 </a>
+    <a href = "2016users.php"> 2016 </a>
+    <a href = "2017users.php"> 2017 </a>
+    <a href = "2018users.php"> 2018 </a>
+    <a href = "2019users.php"> 2019 </a>
 
 </div>
 

@@ -53,8 +53,9 @@ $conn = new SQLite3("data.sqlite");
 
         while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
         {
-            echo "<div class = 'songs'>
-                <h3>".$row['artist']." ".$row['album_name']." ".$row['TS_title']."  </h3>
+            echo "<div >
+               <center><p> ".$row['album_name']." ".$row['artist']."</p><center>
+               <center><p> ".$row['TS_title']."</p><center>
             </div>";
         } 
 
