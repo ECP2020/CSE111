@@ -42,6 +42,14 @@ $conn = new SQLite3("data.sqlite");
 
 <center><a class = "logo"  href = pastyearsuser.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
 
+<!-- The form -->
+<center><form class="example" action="Index.php" method = "POST">
+        <input id = "search" type="text" placeholder="Search Songs" name="search">
+        <button type="submit" name = "submit"><i class="fa fa-search"></i></button>
+        </form></center>
+
+
+
 <div class ="years">
     <a href = "2015users.php"> 2015 </a>
     <a href = "2016users.php"> 2016 </a>
@@ -51,6 +59,29 @@ $conn = new SQLite3("data.sqlite");
 
 </div>
 
+<?php 
+
+
+$Value= isset($_POST['search']) ? $_POST['search'] : '';
+
+
+
+$sql = "
+     ";
+   
+
+     $result = $conn->prepare($sql);
+     $queryResult = $result->execute();
+
+        while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
+        {
+            echo "<div class = 'songs'>
+                <h3>".$row['TS_title']." ".$row['TS_artist']." ".$row['TS_album']."  </h3>
+            </div>";
+        } 
+
+
+?>
 </body>
 </header>
 </html>
