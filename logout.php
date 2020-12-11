@@ -1,13 +1,30 @@
 <?php 
+    $user = 'root';
+    $pass = '';
+    $db = 'SelectedItems';
 
-// Check connection
-$conn = new SQLite3("data.sqlite");
-// Check connection
-    if(!$conn) 
-    {
-        die( "Not connected to DB");
+    //New database named SelectedItems
+
+    $db = new mysqli('localhost', $user, $pass, $db) or die ("unable to connect");
+
+
+    echo "Connected successfully";
+
+
+             
+    $sql = "DROP TABLE Items";
+    //$stmt = $mysqli->prepare();
+
+    if ($db->query($sql) === TRUE) {
+      echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $db->error;
     }
-?>
+
+
+
+    ?>
+
 
 <!DOCTYPE html>
 <html>

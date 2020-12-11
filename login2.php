@@ -30,6 +30,16 @@ $user = 'root';
 <header> <!-- adding the css styles -->
 <body bgcolor = #a45db8>
 
+<div class="sidebar">
+  <a href = "indexuser.php"> Home </a>
+  <a href="TrendingSongsusers.php">Trending Songs</a>
+  <a href="albumsuser.php">Albums</a>
+  <a href="RadioStationsuser.php">Radio Stations</a>
+  <a href= "pastyearsuser.php"> Past Trending Songs </a>
+  <a href= "login2.php"> Playlist </a>
+  <a href ="logout.php" > Logout </a>
+</div>
+
 <?php 
 
 $select;
