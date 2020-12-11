@@ -35,10 +35,11 @@ $conn = new SQLite3("data.sqlite");
   <a href="Albumsusers.php">Albums</a>
   <a href="RadioStationsusers.php">Radio Stations</a>
   <a href= "pastyearsuser.php"> Past Trending Songs </a>
+  <a href= "login2.php"> Playlist </a>
   <a href = "logout.php" > Logout </a>
 </div>
 <center><a class = "logo"  href = indexuser.php ><img id="logo" src ="css/img/2.png"  width="200px" height="200px" /></a></center>
-
+<center><h3> Trending Songs: United States and Global </h3><center>
  <!-- The form -->
  <center><form class="example" action="indexuser.php" method = "POST">
         <input id = "search" type="text" placeholder="Search Songs" name="search">
@@ -102,15 +103,15 @@ $conn = new SQLite3("data.sqlite");
 
     //$sql7 = "SELECT nine_ts_title, nine_ts_artist, nine_album FROM Nineteen_TS WHERE nine_ts_title LIKE '%$Value' OR nine_ts_artist LIKE '%$Value' LIMIT 2 ";
     
-     $sql = "SELECT TS_title, TS_artist, TS_album FROM Global_TS, USA_TS WHERE TS_title LIKE '%$Value%' OR TS_artist LIKE '%$Value%'
+     $sql = "SELECT TS_title, TS_artist, TS_album, TS_Spotify, TS_ISRC FROM Global_TS, USA_TS WHERE TS_title LIKE '%$Value%' OR TS_artist LIKE '%$Value%'
     
      OR TS_album LIKE '%$Value%' AND USA_TS.USA_TS_ISRC = Global_TS.TS_ISRC
  
      UNION
  
-     SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM Global_TS, USA_TS WHERE USA_TS_title LIKE '%$Value%' OR USA_TS_artist LIKE '%$Value%'
+     SELECT USA_TS_title, USA_TS_artist, USA_TS_album, USA_TS_Spotify, USA_TS_ISRC FROM Global_TS, USA_TS WHERE USA_TS_title LIKE '%$Value%' OR USA_TS_artist LIKE '%$Value%'
      
-     OR USA_TS_album LIKE '%$Value%' AND  USA_TS.USA_TS_ISRC = Global_TS.TS_ISRC GROUP BY TS_title;
+     OR USA_TS_album LIKE '%$Value%' AND  USA_TS.USA_TS_ISRC = Global_TS.TS_ISRC GROUP BY TS_title, USA_TS_title;
      ";
      //$queryResult = $result->execute();
 
@@ -119,10 +120,75 @@ $conn = new SQLite3("data.sqlite");
 
         while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
         {
-            echo "<div class = 'songs'>
-                <h3>".$row['TS_title']." ".$row['TS_artist']." ".$row['TS_album']."  </h3>
-            </div>";
+            echo "<form  id = 'formID' action = 'Indexuser.php' method = 'POST'>
+            
+            <div class = 'songs'>
+                <h3><input type= 'checkbox' name = songs[] value = ".$row['TS_ISRC']."  /> ".$row['TS_title']." ".$row['TS_artist']." ".$row['TS_album']." <a href= ".$row['TS_Spotify']."> Listen to Song!</a> </h3>
+            </div>
+            
+            ";
         } 
+        echo "<form id = 'formID' action = 'Indexuser.php' method = 'POST' >
+        <input type='submit' name='submit' value='Submit'/> 
+        </form>" ;
+
+
+
+
+        if(isset($_POST['submit']))
+        {
+            if(!empty($_POST['songs']))
+            {
+                foreach($_POST['songs'] as $checked)
+                {
+                
+                  echo "Songs Selected:";
+                  echo $checked."</br>";
+
+                    $conn->close();
+
+                  //$connection = new mysqli("data.sqlite");
+                  //if ($connection->connect_error) {
+                   //   die("Connection failed: " . $connection->connect_error);
+                   // }
+                $user = 'root';
+                $pass = '';
+                $db = 'SelectedItems';
+
+                //New database named SelectedItems
+
+                $db = new mysqli('localhost', $user, $pass, $db) or die ("unable to connect");
+
+        
+                echo "Connected successfully";
+                    
+                
+                    
+                
+                  $sql = "INSERT INTO Items (userpick) VALUES('$checked')";
+                  //$stmt = $mysqli->prepare();
+
+                  if ($db->query($sql) === TRUE) {
+                    echo "New record created successfully";
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $db->error;
+                  }
+
+                }
+
+
+            
+              
+
+
+
+            } 
+            else 
+            {
+                echo '<div class="error">Checkbox is not selected!</div>';
+            }   
+        }
+
 
 
 ?>
