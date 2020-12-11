@@ -1,0 +1,111 @@
+/* The side navigation menu */
+.sidebar 
+{
+  overflow: hidden;
+  background-color: #fff;
+  }
+  
+  /* This is for the letterin */
+  .sidebar a {
+    float: left;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #a45db8;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #800080;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    text-decoration: none;
+    padding: 1px 16px;
+    border: 1px solid #000
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 300px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  .years {
+    overflow: hidden;
+    background-color: #fff;
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+    left: 10px;
+    background: #fff;
+    overflow-x: hidden;
+    padding: 8px 0;
+ 
+  }
+  .years a {
+    float: center;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+    display: block;
+  }
+  .years a:hover {
+    background-color: #800080;
+    color: #fff;
+  }
+  @media screen and (max-height: 450px) {
+    .years {padding-top: 15px;}
+    .years a {font-size: 18px;}
+  }
+  .songs
+  {
+
+    text-align:center;
+    font-weight:bold;
+    height: 40px;
+    padding: .5px;
+    margin: 10px;
+    background-color: #D3D3D3;
+
+  }
+
+  .al
+  {
+    text-align:center;
+    height: 60px;
+    padding: .5px;
+    margin: 20px;
+    background-color: #D3D3D3;
+  }
+.names
+  {
+    text-align:center;
+    height: 70px;
+    padding: .5px;
+    margin: 20px;
+    background-color: #D3D3D3;
+  }
