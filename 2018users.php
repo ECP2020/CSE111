@@ -53,7 +53,7 @@ $conn = new SQLite3("data.sqlite");
 <?php 
 
 
-    $sql = "SELECT eight_ts_title, eight_ts_artist, eight_album FROM Eightteen_TS";
+    $sql = "SELECT eight_ISRC, eight_ts_title, eight_ts_artist, eight_album FROM Eightteen_TS";
 
      $result = $conn->prepare($sql);
      $queryResult = $result->execute();
@@ -63,7 +63,7 @@ $conn = new SQLite3("data.sqlite");
             echo "<form  id = 'formID' action = '2018users.php' method = 'POST'>
             
             <div class = 'songs'>
-            <p><input type= 'checkbox' name = songs[] value = ".$row['eight_ts_title']." ".$row['eight_ts_artist']."  ".$row['eight_album']." /> ".$row['eight_ts_title']." ".$row['eight_ts_artist']." ".$row['eight_album']."  </p>
+            <p><input type= 'checkbox' name = songs[] value = ".$row['eight_ISRC']." /> ".$row['eight_ts_title']." ".$row['eight_ts_artist']." ".$row['eight_album']."  </p>
 
             </div>
             
@@ -85,6 +85,49 @@ $conn = new SQLite3("data.sqlite");
                 
                   echo "Songs Selected:";
                   echo $checked."</br>";
+
+
+
+
+                  $conn->close();
+
+                  //$connection = new mysqli("data.sqlite");
+                  //if ($connection->connect_error) {
+                   //   die("Connection failed: " . $connection->connect_error);
+                   // }
+                $user = 'root';
+                $pass = '';
+                $db = 'SelectedItems';
+
+                //New database named SelectedItems
+
+                $db = new mysqli('localhost', $user, $pass, $db) or die ("unable to connect");
+
+        
+                echo "Connected successfully";
+                    
+                
+                    
+                
+                  $sql = "INSERT INTO Items (userpick) VALUES('$checked')";
+                  //$stmt = $mysqli->prepare();
+
+                  if ($db->query($sql) === TRUE) {
+                    echo "New record created successfully";
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $db->error;
+                  }
+                   
+
+
+
+
+
+
+
+
+
+
                 }
             } 
             else 

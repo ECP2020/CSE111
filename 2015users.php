@@ -52,7 +52,7 @@ $conn = new SQLite3("data.sqlite");
 <?php 
 
 
-    $sql = "SELECT five_ts_title, five_ts_artist, five_ts_album FROM Fifteen_TS";
+    $sql = "SELECT * FROM Fifteen_TS";
 
      $result = $conn->prepare($sql);
      $queryResult = $result->execute();
@@ -62,7 +62,7 @@ $conn = new SQLite3("data.sqlite");
             echo "<form  id = 'formID' action = '2015users.php' method = 'POST'>
             
             <div class = 'songs'>
-            <p><input type= 'checkbox' name = songs[] value = ".$row['five_ts_title']." ".$row['five_ts_artist']."  ".$row['five_ts_album']." /> ".$row['five_ts_title']." ".$row['five_ts_artist']." ".$row['five_ts_album']."  </p>
+            <p><input type= 'checkbox' name = songs[] value = ".$row['five_ts_ISRC']." /> ".$row['five_ts_title']." ".$row['five_ts_artist']." ".$row['five_ts_album']."  </p>
 
             </div>
             
@@ -84,6 +84,53 @@ $conn = new SQLite3("data.sqlite");
                 
                   echo "Songs Selected:";
                   echo $checked."</br>";
+
+
+
+
+                  $conn->close();
+
+                  //$connection = new mysqli("data.sqlite");
+                  //if ($connection->connect_error) {
+                   //   die("Connection failed: " . $connection->connect_error);
+                   // }
+                $user = 'root';
+                $pass = '';
+                $db = 'SelectedItems';
+
+                //New database named SelectedItems
+
+                $db = new mysqli('localhost', $user, $pass, $db) or die ("unable to connect");
+
+        
+                echo "Connected successfully";
+                    
+                
+                    
+                
+                  $sql = "INSERT INTO Items (userpick) VALUES('$checked')";
+                  //$stmt = $mysqli->prepare();
+
+                  if ($db->query($sql) === TRUE) {
+                    echo "New record created successfully";
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $db->error;
+                  }
+                   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 }
             } 
             else 
