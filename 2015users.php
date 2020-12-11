@@ -62,7 +62,7 @@ $conn = new SQLite3("data.sqlite");
             echo "<form  id = 'formID' action = '2015users.php' method = 'POST'>
             
             <div class = 'songs'>
-            <p><input type= 'checkbox' name = songs[] value = ".$row['five_ts_ISRC']." /> ".$row['five_ts_title']." ".$row['five_ts_artist']." ".$row['five_ts_album']."  </p>
+            <p><input type= 'checkbox' name = songs[] value = ".$row['five_ts_ISRC']." /> ".$row['five_ts_title']." ".$row['five_ts_artist']." ".$row['five_ts_album']." <a href= ".$row['TS_Spotify']." > Listen to Song! </a> </p>
 
             </div>
             

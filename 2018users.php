@@ -53,7 +53,7 @@ $conn = new SQLite3("data.sqlite");
 <?php 
 
 
-    $sql = "SELECT eight_ISRC, eight_ts_title, eight_ts_artist, eight_album FROM Eightteen_TS";
+    $sql = "SELECT eight_ISRC, eight_ts_title, eight_ts_artist, eight_album, TS_Spotify FROM Eightteen_TS";
 
      $result = $conn->prepare($sql);
      $queryResult = $result->execute();
@@ -63,7 +63,7 @@ $conn = new SQLite3("data.sqlite");
             echo "<form  id = 'formID' action = '2018users.php' method = 'POST'>
             
             <div class = 'songs'>
-            <p><input type= 'checkbox' name = songs[] value = ".$row['eight_ISRC']." /> ".$row['eight_ts_title']." ".$row['eight_ts_artist']." ".$row['eight_album']."  </p>
+            <p><input type= 'checkbox' name = songs[] value = ".$row['eight_ISRC']." /> ".$row['eight_ts_title']." ".$row['eight_ts_artist']." ".$row['eight_album']." <a href= ".$row['TS_Spotify']."> Listen to Song!</a> </p>
 
             </div>
             
