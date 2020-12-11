@@ -66,7 +66,32 @@ $Value= isset($_POST['search']) ? $_POST['search'] : '';
 
 
 
-$sql = "
+$sql = "SELECT five_ts_title, five_ts_artist, five_ts_album FROM Fifteen_TS, Sixteen_TS WHERE five_ts_title LIKE '%$Value%' OR five_ts_artist LIKE '%$Value%'
+    
+OR five_ts_album LIKE '%$Value%' AND Sixteen_TS.six_ts_ISRC = Fifteen_TS.five_ts_ISRC
+
+UNION
+
+SELECT six_ts_title, six_ts_artist, six_ts_album FROM Fifteen_TS, Sixteen_TS WHERE six_ts_title LIKE '%$Value%' OR six_ts_artist LIKE '%$Value%'
+
+OR six_ts_album LIKE '%$Value%' AND  Sixteen_TS.six_ts_ISRC = Fifteen_TS.five_ts_ISRC GROUP BY five_ts_title
+
+UNION
+SELECT seven_ts_title, seven_ts_artist, seven_ts_album FROM Fifteen_TS, Seventeen_TS WHERE seven_ts_title LIKE '%$Value%' OR seven_ts_artist LIKE '%$Value%'
+    
+OR seven_ts_album LIKE '%$Value%' AND Seventeen_TS.seven_ts_rank_number = Fifteen_TS.five_ts_ISRC GROUP BY seven_ts_title
+
+UNION
+
+SELECT eight_ts_title, eight_ts_artist, eight_album FROM Fifteen_TS, Eightteen_TS WHERE eight_ts_title LIKE '%$Value%' OR eight_ts_artist LIKE '%$Value%'
+
+OR eight_album LIKE '%$Value%' AND  Eightteen_TS.eight_ISRC = Fifteen_TS.five_ts_ISRC GROUP BY eight_ts_title
+
+UNION
+
+SELECT nine_ts_title, nine_ts_artist, nine_album FROM Fifteen_TS, Nineteen_TS WHERE nine_ts_title LIKE '%$Value%' OR nine_ts_artist LIKE '%$Value%'
+
+OR nine_album LIKE '%$Value%' AND  Nineteen_TS.nine_ISRC = Fifteen_TS.five_ts_ISRC GROUP BY nine_ts_title
      ";
    
 
