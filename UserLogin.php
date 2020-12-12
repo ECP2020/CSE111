@@ -46,8 +46,9 @@ $conn = new SQLite3("data.sqlite");
 		<button type="submit" class="btn btn-outline-warning" name="submit" value="troll">Log-In</button>	
 </form>
 <!--sign up button -->
-<a href signup.php> Signup </a>
-<form action = logout.php method = "POST">
+<form action = "signup.php" method = "POST" >
+<button type =  "submit "  class="btn btn-outline-warning" name="submit" value="troll">Signup </button>
+</form>
 </center>
 
 </body> 

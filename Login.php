@@ -34,62 +34,50 @@
 <?php 
 //include('TrendingSongsUsers.php');
 // Check connection
-$conn = new SQLite3("data.sqlite");
-// Check connection
-    if(!$conn) 
-    {
-        die( "Not connected to DB");
-    }
+
+
+$user = 'root';
+$pass = '';
+$db = 'Person';
+
+//New database named SelectedItems
+
+$db = new mysqli('localhost', $user, $pass, $db) or die ("unable to connect");
+
+
+//echo "Connected successfully";
+    
 
 
 $_SESSION['user_email'] = $_POST['userEmail'];
-$_SESSION['search'] = $_POST['SelectedSongs'];
 
+//echo $_SESSION['user_email'];
 
 //$_SESSION['password'] = $_POST['password'];
 
-$query1 = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS";
+$name;
 
-$query= "SELECT P_email, P_name FROM Person WHERE P_email = '{$_SESSION['user_email']}'";
+$query= "SELECT P_email, P_name FROM Users WHERE P_email = '{$_SESSION['user_email']}'";
+$result = mysqli_query($db, $query);
 
-$statement1 = $conn->prepare($query1);
-$result1 = $statement1->execute();
-
-$statement = $conn->prepare($query);
-$result = $statement->execute();
-
-while($row = $result->fetchArray(SQLITE3_ASSOC))
+if (mysqli_num_rows($result) > 0) 
 {
-    $email = $row['P_email'];
-    $name = $row['P_name'];
-    echo "<center><h3> Welcome, " .$name. "</h3></center>"; 
+ // output data of each row
+ while($row = mysqli_fetch_assoc($result)) 
+ {
+     $name = $row['P_name'];
+ }
+ echo "<center><h3> Welcome, " .$name. "</h3></center>"; 
 
-   
+ 
 }
-if($_SESSION['user_email'] = $result->fetchArray(SQLITE3_ASSOC)) 
-{
-    echo "<center><h3> Success </h3></center> ";
 
-    //$_SESSION['user_email']= $row['P_email'];
-    //$name = $row['P_name'];
-
-
-} 
-if($_SESSION['seach'] = $result1->fetchArray(SQLITE3_ASSOC)) 
-{
-    echo "<center><h3> SL </h3></center> ";
-
-    //$_SESSION['user_email']= $row['P_email'];
-    //$name = $row['P_name'];
-
-
-} 
 
 else 
 {
-    //go back to login if username is wrong
-    header("location: UserLogin.php");
+    header("location: error.php");
 }
+
 
 
 
