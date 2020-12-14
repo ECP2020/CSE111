@@ -96,7 +96,7 @@ $conn = new SQLite3("data.sqlite");
                    // }
                 $user = 'root';
                 $pass = '';
-                $db = 'SelectedItems';
+                $db = 'Person';
 
                 //New database named SelectedItems
 
@@ -105,10 +105,44 @@ $conn = new SQLite3("data.sqlite");
         
                 echo "Connected successfully";
                     
+
+
+                $query= "SELECT P_email FROM Users WHERE SignedIN = 'YES'";
+                $result = mysqli_query($db, $query);
+                $name; 
+                if (mysqli_num_rows($result) > 0) 
+                {
+                 // output data of each row
+                  while($row = mysqli_fetch_assoc($result)) 
+                  {
+                      $name = $row['P_email'];
+                  
+                  }
+
+                }
+
+                $songID;
+                $query= "SELECT P_email, P_songs FROM Users WHERE SignedIN = 'YES'";
+                $result = mysqli_query($db, $query);
+                $name; 
+                if (mysqli_num_rows($result) > 0) 
+                {
+                 // output data of each row
+                  while($row = mysqli_fetch_assoc($result)) 
+                  {
+                      $name = $row['P_email'];
+                      $songID = $row['P_songs'];
+                      
+                  
+                  }
+
+                  echo $songsID;
+
+                }
                 
                     
                 
-                  $sql = "INSERT INTO Items (userpick) VALUES('$checked')";
+                  $sql = "INSERT INTO Items (userpick, ID) VALUES('$checked', '$songID')";
                   //$stmt = $mysqli->prepare();
 
                   if ($db->query($sql) === TRUE) {

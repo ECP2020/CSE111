@@ -45,7 +45,7 @@ $user = 'root';
 <?php 
 
 $select;
-$sql = "SELECT userpick FROM  Items, Users WHERE ID = P_songs";
+$sql = "SELECT userpick FROM  Items, Users WHERE ID = P_songs AND Users.SignedIn = 'YES' GROUP BY userpick";
 //$stmt = $mysqli->prepare();
 
 $result = mysqli_query($db, $sql);
@@ -71,12 +71,35 @@ $conn = new SQLite3("data.sqlite");
         die( "Not connected to DB");
     }
 
-    $sql1 = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS, Global_TS WHERE  USA_TS_ISRC = TS_ISRC AND  USA_TS_ISRC = '$select' GROUP BY USA_TS_title";
+
+    $sql2 = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS, Global_TS  WHERE USA_TS_ISRC = '$select' GROUP BY USA_TS_ISRC";
+
+    //$sql1 = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS, Global_TS  WHERE TS_ISRC = USA_TS_ISRC AND USA_TS_ISRC = '$select' GROUP BY USA_TS_ISRC
+    
+    //UNION
+
+    //SELECT TS_title, TS_artist, TS_album FROM Global_TS, USA_TS WHERE TS_ISRC = '$select' AND TS_ISRC = USA_TS_ISRC GROUP BY TS_ISRC
+    
+    //UNION
 
 
+    //SELECT nine_ts_title, nine_ts_artist, nine_album FROM Nineteen_TS, USA_TS, Global_TS WHERE  nine_ISRC = '$select'  GROUP BY nine_ISRC
 
-    //$sql2 = "SELECT TS_title, TS_artist, TS_album FROM Global_TS WHERE TS_ISRC = '$select' ";
+    //";
+    
+   
+     
 
+
+   //SELECT TS_title, TS_artist, TS_album FROM Global_TS, USA_TS WHERE TS_ISRC = '$select' GROUP BY TS_ISRC";
+   
+    
+    
+    
+    
+    //SELECT TS_title, TS_artist, TS_album FROM Global_TS, USA_TS WHERE  TS_ISRC = '$select' GROUP BY TS_title, USA_TS_title ";
+
+   //$sql2 = "SELECT TS_title, TS_artist, TS_album FROM Global_TS, USA_TS WHERE USA_TS_ISRC = TS_ISRC AND TS_ISRC = '$select' GROUP BY TS_ISRC ";
 
     $sql3 = "SELECT five_ts_title, five_ts_artist, five_ts_album FROM Fifteen_TS WHERE five_ts_ISRC = '$select' GROUP BY five_ts_title ";
 
@@ -86,22 +109,39 @@ $conn = new SQLite3("data.sqlite");
 
     $sql6 = "SELECT eight_ts_title, eight_ts_artist, eight_album FROM Eightteen_TS WHERE eight_ISRC = '$select' GROUP BY eight_ts_title";
 
-    $sql7 = "SELECT nine_ts_title, nine_ts_artist, nine_album FROM Nineteen_TS WHERE nine_ISRC = '$select' GROUP BY nine_ts_artist ";
+    //$sql7 = "SELECT nine_ts_title, nine_ts_artist, nine_album FROM Nineteen_TS, USA_TS, Global_TS WHERE  nine_ISRC = '$select'  GROUP BY nine_ISRC ";
 
 
 
 
-    $result1 = $conn->prepare($sql1);
-    $queryResult = $result1->execute();
+   //$result1 = $conn->prepare($sql1);
+    //$queryResult = $result1->execute();
 
 
 
-       while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
-       {
-        echo "<div class = 'songs'>
-        <h3> ".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']."  </h3>
-    </div>";
-       }
+     //  while($row = $queryResult->fetchArray(SQLITE3_ASSOC))
+     //  {
+     //   echo "<div class = 'songs'>
+     //   <h3> ".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']." </h3>
+    //</div>";
+    //   }
+
+
+       $result2 = $conn->prepare($sql2);
+       $queryResult2 = $result2->execute();
+   
+   
+   
+         while($row = $queryResult2->fetchArray(SQLITE3_ASSOC))
+        {
+         echo "<div class = 'songs'>
+    <h3> ".$row['USA_TS_title']." ".$row['USA_TS_artist']." ".$row['USA_TS_album']." </h3>
+      </div>";
+      }
+
+
+
+
 
        $result3 = $conn->prepare($sql3);
        $queryResult3 = $result3->execute();
@@ -152,19 +192,19 @@ $conn = new SQLite3("data.sqlite");
        </div>";
           }
 
-          $result7 = $conn->prepare($sql7);
-          $queryResult7 = $result7->execute();
+          //$result7 = $conn->prepare($sql7);
+         // $queryResult7 = $result7->execute();
    
    
    
-        while($row = $queryResult7->fetchArray(SQLITE3_ASSOC))
-        {
-           echo "<div class = 'songs'>
-           <h3> ".$row['nine_ts_title']." ".$row['nine_ts_artist']." ".$row['nine_album']."  </h3>
-       </div>";
-          }
+       // while($row = $queryResult7->fetchArray(SQLITE3_ASSOC))
+       // {
+       //    echo "<div class = 'songs'>
+       //    <h3> ".$row['nine_ts_title']." ".$row['nine_ts_artist']." ".$row['nine_album']."  </h3>
+      // </div>";
+      //    }
 
-        }
+       }
 
     }  
        
