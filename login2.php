@@ -2,7 +2,7 @@
 
 $user = 'root';
                 $pass = '';
-                $db = 'SelectedItems';
+                $db = 'Person';
 
                 $db = new mysqli('localhost', $user, $pass, $db) or die ("unable to connect");
 
@@ -40,10 +40,12 @@ $user = 'root';
   <a href ="logout.php" > Logout </a>
 </div>
 
+<h3> Current Songs Added </h3>
+
 <?php 
 
 $select;
-$sql = "SELECT * FROM  Items";
+$sql = "SELECT userpick FROM  Items, Users WHERE ID = P_songs";
 //$stmt = $mysqli->prepare();
 
 $result = mysqli_query($db, $sql);
@@ -69,22 +71,22 @@ $conn = new SQLite3("data.sqlite");
         die( "Not connected to DB");
     }
 
-    $sql1 = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS, Global_TS WHERE  USA_TS_ISRC = TS_ISRC AND  USA_TS_ISRC = '$select' ";
+    $sql1 = "SELECT USA_TS_title, USA_TS_artist, USA_TS_album FROM USA_TS, Global_TS WHERE  USA_TS_ISRC = TS_ISRC AND  USA_TS_ISRC = '$select' GROUP BY USA_TS_title";
 
 
 
     //$sql2 = "SELECT TS_title, TS_artist, TS_album FROM Global_TS WHERE TS_ISRC = '$select' ";
 
 
-    $sql3 = "SELECT five_ts_title, five_ts_artist, five_ts_album FROM Fifteen_TS WHERE five_ts_ISRC = '$select' ";
+    $sql3 = "SELECT five_ts_title, five_ts_artist, five_ts_album FROM Fifteen_TS WHERE five_ts_ISRC = '$select' GROUP BY five_ts_title ";
 
-    $sql4 = "SELECT six_ts_title, six_ts_artist, six_ts_album FROM Sixteen_TS WHERE six_ts_ISRC = '$select' ";
+    $sql4 = "SELECT six_ts_title, six_ts_artist, six_ts_album FROM Sixteen_TS WHERE six_ts_ISRC = '$select' GROUP BY six_ts_album ";
 
-    $sql5 = "SELECT seven_ts_title, seven_ts_artist, seven_ts_album FROM Seventeen_TS WHERE seven_ts_rank_number = '$select' ";
+    $sql5 = "SELECT seven_ts_title, seven_ts_artist, seven_ts_album FROM Seventeen_TS WHERE seven_ts_rank_number = '$select' GROUP BY seven_ts_title ";
 
-    $sql6 = "SELECT eight_ts_title, eight_ts_artist, eight_album FROM Eightteen_TS WHERE eight_ISRC = '$select' ";
+    $sql6 = "SELECT eight_ts_title, eight_ts_artist, eight_album FROM Eightteen_TS WHERE eight_ISRC = '$select' GROUP BY eight_ts_title";
 
-    $sql7 = "SELECT nine_ts_title, nine_ts_artist, nine_album FROM Nineteen_TS WHERE nine_ISRC = '$select' ";
+    $sql7 = "SELECT nine_ts_title, nine_ts_artist, nine_album FROM Nineteen_TS WHERE nine_ISRC = '$select' GROUP BY nine_ts_artist ";
 
 
 
@@ -166,7 +168,6 @@ $conn = new SQLite3("data.sqlite");
 
     }  
        
-
 
 
 

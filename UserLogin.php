@@ -39,7 +39,7 @@ $conn = new SQLite3("data.sqlite");
 
 <center> 
 
-<form action= Login.php method="POST">
+<form action= postvariables.php method="POST">
 		<label for="emailField">Email Address: </label>
 		<input name="userEmail" placeholder="123@gmail.com" id="emailField">
         <input type = "password" placeholder = "Password" required >

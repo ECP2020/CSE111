@@ -68,7 +68,7 @@ if(isset($_GET['submit']))
 
     $pass =  $_GET['password'];
 
-$sql = "INSERT INTO Users (P_name, P_email, P_password) VALUES('$name', '$email', '$pass')";
+$sql = "INSERT INTO Users (P_name, P_email, P_password, SignedIn) VALUES('$name', '$email', '$pass', 'NO')";
 //$stmt = $mysqli->prepare();
 
     if ($db->query($sql) === TRUE) 
